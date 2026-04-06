@@ -38,7 +38,7 @@ Backend:
 
 ### Notes Manager
 
-[]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
+[ ]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
 
 [gif goes here]
 
