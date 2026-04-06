@@ -32,7 +32,7 @@ Backend:
 
 ### Course Dashboard
 
-- [ ]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
+[ ]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
 
 [gif goes here]
 
