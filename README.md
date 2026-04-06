@@ -38,55 +38,55 @@ Backend:
 
 ### Notes Manager
 
-- [ ]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
+[X]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
 
 [gif goes here]
 
 ### Assignment Tracker
 
-- [ ]Users can add assignments with due dates, descriptions, and course associations. Assignments can be marked as complete and track progress over time.
+[ ]Users can add assignments with due dates, descriptions, and course associations. Assignments can be marked as complete and track progress over time.
 
 [gif goes here]
 
 ### Smart Material Linking
 
-- [ ]When a user opens an assignment, the app automatically surfaces the most relevant notes and course materials using AI-powered suggestions based on content similarity and tags.
+[ ]When a user opens an assignment, the app automatically surfaces the most relevant notes and course materials using AI-powered suggestions based on content similarity and tags.
 
 [gif goes here]
 
 ### Study Plan Generator
 
-- [ ]Based on the user's upcoming assignments and exams, Mitra generates a personalized study plan with recommended review sessions, topics, and study methods.
+[ ]Based on the user's upcoming assignments and exams, Mitra generates a personalized study plan with recommended review sessions, topics, and study methods.
   
 [gif goes here]
 
 ### Exam Prep Mode
 
-- [ ]Users can enter an exam topic and Mitra compiles all related notes, materials, and past assignments into a focused review page with suggested study strategies.
+[ ]Users can enter an exam topic and Mitra compiles all related notes, materials, and past assignments into a focused review page with suggested study strategies.
   
 [gif goes here]
 
 ### Course Material Library
 
-- [ ]Users can upload and manage course materials (syllabi, readings, slides) linked to specific courses. Materials are searchable and can be tagged.
+[ ]Users can upload and manage course materials (syllabi, readings, slides) linked to specific courses. Materials are searchable and can be tagged.
 
 [gif goes here]
 
 ### Persistent Memory
 
-- [ ]The app remembers a user's history — past assignments, study patterns, and notes — and uses this context to improve recommendations over time.
+[ ]The app remembers a user's history — past assignments, study patterns, and notes — and uses this context to improve recommendations over time.
 
 [gif goes here]
 
 ### Filter & Sort
 
-- [ ]Users can filter and sort notes, assignments, and materials by course, date, tags, status (complete/incomplete), or relevance.
+[ ]Users can filter and sort notes, assignments, and materials by course, date, tags, status (complete/incomplete), or relevance.
 
 [gif goes here]
 
 ### Quick-Add Modal
 
-- [ ]A slide-out pane / modal lets users quickly add a new note, assignment, or material from anywhere in the app without navigating away from the current page.
+[ ]A slide-out pane / modal lets users quickly add a new note, assignment, or material from anywhere in the app without navigating away from the current page.
 
 [gif goes here]
 
