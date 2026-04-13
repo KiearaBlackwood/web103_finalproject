@@ -18,12 +18,15 @@ This unit, be sure to complete all tasks listed below. To complete a task, place
 
 ### 1. What went well during this unit?
 
-[👉🏾👉🏾👉🏾 your answer here]
+What went well during this unit?
+Collaboration between group members went smoothly this unit. We were able to work through the database schema together and land on a design we both felt good about figuring out how tables like Course, Assignment, Note, and Material all relate to each other through foreign keys was a satisfying problem to work through as a team.
 
 ### 2. What were some challenges your group faced in this unit?
 
-[👉🏾👉🏾👉🏾 your answer here]
+What were some challenges your group faced in this unit?
+Designing the wireframes took more iteration than expected, since we wanted them to accurately reflect Mitra's feature set (like the Smart Sidebar and Exam Prep mode) rather than just placeholder layouts. Deciding on the database relationships was also tricky in places for example, weighing whether the User-Course relationship should stay one-to-many or eventually become many-to-many required some back and forth before we settled on the current approach.
 
 ### 3. What additional support will you need in upcoming units as you continue to work on your final project?
 
-[👉🏾👉🏾👉🏾 your answer here]
+What additional support will you need in upcoming units as you continue to work on your final project?
+As we move into building the app, we expect to need support on both the backend and frontend sides. On the backend, guidance on structuring our API routes and connecting our database schema to a working server would be helpful. On the frontend, we would appreciate support translating our wireframes into functional UI components that match the design direction we established this unit.
