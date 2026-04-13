@@ -10,12 +10,10 @@ Reference the Creating an Entity Relationship Diagram final project guide in the
 
 <img width="2816" height="1536" alt="Course Dashboard" src="https://github.com/user-attachments/assets/ec2aba32-5e3c-469c-9a76-0930ac6e3323" />
 
-## Wireframe 2: [page title]
+## Wireframe 2:  Course Page ⭐
 
-[👉🏾👉🏾👉🏾 include wireframe 2]
+<img width="2814" height="1536" alt="Course Page" src="https://github.com/user-attachments/assets/3b0403df-0fdd-4310-9e17-cadb75ea7444" />
 
-## Wireframe 3: [page title]
+## Wireframe 3: Exam Prep ⭐
 
-[👉🏾👉🏾👉🏾 include wireframe 3]
-
-[👉🏾👉🏾👉🏾 include more wireframes as desired]
+<img width="2814" height="1536" alt="Exam Prep" src="https://github.com/user-attachments/assets/ed1c7472-1067-4b9d-9b53-21053655c60f" />
