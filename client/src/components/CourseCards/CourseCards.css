@@ -1,0 +1,42 @@
+.course-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    background: var(--bg);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+}
+
+.card-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.card-actions button {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-h);
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.card-actions button:hover {
+    border-color: var(--accent);
+}
+
+.delete-btn {
+    color: #ff4d4d;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}

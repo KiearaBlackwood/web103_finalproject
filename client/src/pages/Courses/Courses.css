@@ -1,0 +1,93 @@
+.course-header {
+    padding: 20px;
+}
+
+.course-header h1 {
+    margin-bottom: 8px;
+}
+
+.course-header p {
+    margin-top: 0;
+}
+
+.course-organizer {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    background: var(--social-bg);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.column-header button {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+    padding: 6px 12px;
+}
+
+.column-header button:hover {
+    border-color: var(--accent);
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-list:empty::after {
+    content: "No items yet. Click + to add.";
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text);
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+}
+
+.item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.item-card span {
+    font-size: 15px;
+    color: var(--text-h);
+}
+
+.item-list#notes-list .item-card {
+    border-left: 4px solid #aa3bff;
+}
+
+.item-list#materials-list .item-card {
+    border-left: 4px solid #3b82f6;
+}
+
+.item-list#assignments-list .item-card {
+    border-left: 4px solid #ef4444;
+}
