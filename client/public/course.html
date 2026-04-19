@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitra - Course Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <a href="index.html">← Back to Dashboard</a>
+            <h1 id="course-title">Loading Course...</h1>
+            <p id="course-description"></p>
+        </header>
+
+        <main class="course-organizer">
+            <section class="column" id="notes-section">
+                <div class="column-header">
+                    <h2>Notes</h2>
+                    <button onclick="addItem('note')">+</button>
+                </div>
+                <ul id="notes-list" class="item-list"></ul>
+            </section>
+
+            <section class="column" id="materials-section">
+                <div class="column-header">
+                    <h2>Materials</h2>
+                    <button onclick="addItem('material')">+</button>
+                </div>
+                <ul id="materials-list" class="item-list"></ul>
+            </section>
+
+            <section class="column" id="assignments-section">
+                <div class="column-header">
+                    <h2>Assignments</h2>
+                    <button onclick="addItem('assignment')">+</button>
+                </div>
+                <ul id="assignments-list" class="item-list"></ul>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/src/course_detail.js"></script>
+</body>
+</html>

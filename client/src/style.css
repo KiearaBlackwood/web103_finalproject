@@ -1,0 +1,198 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+  color-scheme: light dark;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.course-card {
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 12px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background: var(--bg);
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--accent);
+}
+
+dialog {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px;
+  background: var(--bg);
+  color: var(--text);
+  width: 400px;
+}
+
+dialog input, dialog textarea {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--text-h);
+}
+
+.delete-btn {
+  color: #ff4d4d;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.course-organizer {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    align-items: flex-start;
+}
+
+.column {
+    flex: 1;
+    min-width: 300px;
+    background: var(--social-bg);
+    border-radius: 12px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.item-list {
+    list-style: none;
+    padding: 0;
+}
+
+.item-card {
+    background: var(--bg);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.item-card:hover {
+    border-color: var(--accent);
+}
+
+/* Placeholder for empty columns */
+.item-list:empty::after {
+    content: "No items yet. Click + to add.";
+    display: block;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text);
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+}
+
+/* Item card styling */
+.item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    transition: transform 0.1s;
+}
+
+.item-card:hover {
+    transform: scale(1.02);
+}
+
+.item-card span {
+    font-size: 15px;
+    color: var(--text-h);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+#search-bar {
+    width: 60%;
+    padding: 12px 20px;
+    border-radius: 25px;
+    border: 1px solid var(--border);
+    background: var(--code-bg);
+}
+
+#sort-filter {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+/* Add a visual "type" badge to items in the Single Course View */
+.item-card::before {
+    content: '';
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.item-list#notes-list .item-card { border-left: 4px solid #aa3bff; }
+.item-list#materials-list .item-card { border-left: 4px solid #3b82f6; }
+.item-list#assignments-list .item-card { border-left: 4px solid #ef4444; }

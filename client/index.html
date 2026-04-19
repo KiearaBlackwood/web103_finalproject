@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mitra - Course Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header id="center">
+        <h1>Course Dashboard</h1>
+        <button id="add-course-btn" class="counter">+ Add New Course</button>
+      </header>
+
+    <section class="controls">
+      <input type="text" id="search-bar" placeholder="Search courses by name...">
+      <select id="sort-filter">
+        <option value="newest">Newest First</option>
+        <option value="alphabetical">A-Z</option>
+      </select>
+    </section>
+
+      <main id="course-grid" class="next-steps-grid"></main>
+
+      <dialog id="course-modal">
+        <form id="course-form" method="dialog">
+          <h2 id="modal-title">Add Course</h2>
+          <input type="hidden" id="course-id">
+          <input type="text" id="title" placeholder="Course Title" required>
+          <textarea id="description" placeholder="Course Description"></textarea>
+          <div class="modal-actions">
+            <button type="button" id="close-modal">Cancel</button>
+            <button type="submit" id="save-course">Save Course</button>
+          </div>
+        </form>
+      </dialog>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
