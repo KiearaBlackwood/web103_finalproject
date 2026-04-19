@@ -75,7 +75,7 @@ document.getElementById('close-modal').addEventListener('click', () => courseMod
 
 let allCourses = []; // Local cache of database results
 
-async function fetchCourses() {
+async function fetchCourses2() {
     const response = await fetch('/courses');
     allCourses = await response.json();
     applyFilters(); 
@@ -103,4 +103,4 @@ document.getElementById('search-bar').addEventListener('input', applyFilters);
 document.getElementById('sort-filter').addEventListener('change', applyFilters);
 
 
-fetchCourses();
+fetchCourses2();
