@@ -40,7 +40,7 @@ const Dashboard = () => {
             return [...filtered].sort((a, b) => a.title.localeCompare(b.title))
         }
 
-        return [...filtered].sort((a, b) => b.id - a.id)
+        return [...filtered].sort((a, b) => b.course_id - a.course_id)
     }, [courses, searchTerm, sortBy])
 
     const openCreateModal = () => {
@@ -51,7 +51,7 @@ const Dashboard = () => {
     }
 
     const openEditModal = (course) => {
-        setEditingCourseId(course.id)
+        setEditingCourseId(course.course_id)
         setTitle(course.title)
         setDescription(course.description || '')
         setIsModalOpen(true)
@@ -83,7 +83,7 @@ const Dashboard = () => {
                 await coursesApi.create({
                     title: normalizedTitle,
                     description: normalizedDescription,
-                    user_id: 'default_user'
+                    user_id: 1
                 })
             }
 
@@ -111,7 +111,7 @@ const Dashboard = () => {
     }
 
     const handleCardClick = (courseId) => {
-        const selectedCourse = courses.find((course) => course.id === courseId)
+        const selectedCourse = courses.find((course) => course.course_id === courseId)
 
         navigate(`/courses/${courseId}`, {
             state: {
@@ -152,7 +152,7 @@ const Dashboard = () => {
             <main id="course-grid" className="next-steps-grid">
                 {filteredCourses.map((course) => (
                     <CoursesCard
-                        key={course.id}
+                        key={course.course_id}
                         course={course}
                         onCardClick={handleCardClick}
                         onEdit={openEditModal}

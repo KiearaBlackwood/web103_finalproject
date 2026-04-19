@@ -2,7 +2,7 @@ import './CourseCards.css'
 
 const CoursesCard = ({ course, onCardClick, onEdit, onDelete }) => {
     return (
-        <div className="course-card" onClick={() => onCardClick(course.id)}>
+        <div className="course-card" onClick={() => onCardClick(course.course_id)}>
             <h2>{course.title}</h2>
             <p>{course.description || 'No description provided.'}</p>
             <div className="card-actions">
@@ -20,7 +20,7 @@ const CoursesCard = ({ course, onCardClick, onEdit, onDelete }) => {
                     className="delete-btn"
                     onClick={(event) => {
                         event.stopPropagation()
-                        onDelete(course.id)
+                        onDelete(course.course_id)
                     }}
                 >
                     Delete

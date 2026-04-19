@@ -68,9 +68,9 @@ const Courses = () => {
 
     const renderItems = (items) => {
         return items.map((item) => (
-            <li key={item.id} className="item-card">
+            <li key={item.item_id} className="item-card">
                 <span>{item.content}</span>
-                <button type="button" className="delete-btn" onClick={() => deleteItem(item.id)}>
+                <button type="button" className="delete-btn" onClick={() => deleteItem(item.item_id)}>
                     ×
                 </button>
             </li>
