@@ -34,7 +34,7 @@ Backend:
 
 [X]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
 
-![Course Dashboard](capstonegifdash.gif)
+![Course Dashboard](CapstoneGifDash.gif)
 
 ### Notes Manager
 
