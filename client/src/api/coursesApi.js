@@ -23,6 +23,18 @@ async function request(path, options = {}) {
 
 export const coursesApi = {
     getAll: () => request('/courses'),
+    getItems: (params = {}) => {
+        const searchParams = new URLSearchParams()
+
+        Object.entries(params).forEach(([key, value]) => {
+            if (value !== undefined && value !== null && value !== '') {
+                searchParams.set(key, value)
+            }
+        })
+
+        const queryString = searchParams.toString()
+        return request(`/courses/items${queryString ? `?${queryString}` : ''}`)
+    },
     getById: (id) => request(`/courses/${id}`),
     create: (course) => request('/courses', {
         method: 'POST',

@@ -80,6 +80,33 @@
     color: var(--text-h);
 }
 
+.item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.item-content {
+    font-weight: 600;
+}
+
+.item-meta,
+.item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.item-meta span,
+.item-tags span {
+    font-size: 0.8rem;
+    border-radius: 999px;
+    padding: 4px 8px;
+    background: var(--social-bg);
+    color: var(--text-h);
+}
+
 .item-list#notes-list .item-card {
     border-left: 4px solid #aa3bff;
 }
