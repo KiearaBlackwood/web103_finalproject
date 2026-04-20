@@ -47,7 +47,10 @@ const createTables = async () => {
             course_id INTEGER REFERENCES courses(course_id) ON DELETE CASCADE,
             type TEXT CHECK (type IN ('note', 'material', 'assignment')),
             content TEXT NOT NULL,
-            due_date TIMESTAMP
+            due_date TIMESTAMP,
+            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+            tags TEXT[] NOT NULL DEFAULT '{}',
+            status TEXT NOT NULL DEFAULT 'incomplete' CHECK (status IN ('complete', 'incomplete'))
         );
     `
 
@@ -93,8 +96,8 @@ const seedCourseItems = async () => {
     try {
         for (const item of courseItemsData) {
             const insertQuery = {
-                text: 'INSERT INTO course_items (course_id, type, content, due_date) VALUES ($1, $2, $3, $4)',
-                values: [item.course_id, item.type, item.content, item.due_date]
+                text: 'INSERT INTO course_items (course_id, type, content, due_date, created_at, tags, status) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+                values: [item.course_id, item.type, item.content, item.due_date, item.created_at, item.tags, item.status]
             }
             await pool.query(insertQuery)
         }

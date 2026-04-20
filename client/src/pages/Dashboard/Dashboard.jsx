@@ -120,13 +120,22 @@ const Dashboard = () => {
         })
     }
 
+    const openLibrary = () => {
+        navigate('/library')
+    }
+
     return (
         <div id="app">
             <header id="center">
                 <h1>Course Dashboard</h1>
-                <button id="add-course-btn" className="counter" onClick={openCreateModal}>
-                    + Add New Course
-                </button>
+                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                    <button type="button" className="counter" onClick={openLibrary}>
+                        Browse All Items
+                    </button>
+                    <button id="add-course-btn" className="counter" onClick={openCreateModal}>
+                        + Add New Course
+                    </button>
+                </div>
             </header>
 
             <section className="controls">
