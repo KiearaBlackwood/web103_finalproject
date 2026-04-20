@@ -32,9 +32,9 @@ Backend:
 
 ### Course Dashboard
 
-[ ]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
+[X]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
 
-[gif goes here]
+![Course Dashboard](capstonegifdash.gif)
 
 ### Notes Manager
 
@@ -57,13 +57,13 @@ Backend:
 ### Study Plan Generator
 
 [ ]Based on the user's upcoming assignments and exams, Mitra generates a personalized study plan with recommended review sessions, topics, and study methods.
-  
+
 [gif goes here]
 
 ### Exam Prep Mode
 
 [ ]Users can enter an exam topic and Mitra compiles all related notes, materials, and past assignments into a focused review page with suggested study strategies.
-  
+
 [gif goes here]
 
 ### Course Material Library
