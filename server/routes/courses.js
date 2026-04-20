@@ -1,12 +1,12 @@
 import express from 'express';
-import { pool } from '../server.js';
+import { pool } from '../config/database.js';
 
 const router = express.Router();
 
 // GET all courses
 router.get('/', async (req, res) => {
     try {
-        const results = await pool.query('SELECT * FROM courses ORDER BY id ASC');
+        const results = await pool.query('SELECT * FROM courses ORDER BY course_id ASC');
         res.status(200).json(results.rows);
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        const course = await pool.query('SELECT * FROM courses WHERE id = $1', [id]);
+        const course = await pool.query('SELECT * FROM courses WHERE course_id = $1', [id]);
         const items = await pool.query('SELECT * FROM course_items WHERE course_id = $1', [id]);
         res.status(200).json({ ...course.rows[0], items: items.rows });
     } catch (err) {
@@ -45,7 +45,7 @@ router.patch('/:id', async (req, res) => {
     const { title, description } = req.body;
     try {
         const result = await pool.query(
-            'UPDATE courses SET title = $1, description = $2 WHERE id = $3 RETURNING *',
+            'UPDATE courses SET title = $1, description = $2 WHERE course_id = $3 RETURNING *',
             [title, description, id]
         );
         res.status(200).json(result.rows[0]);
@@ -58,7 +58,7 @@ router.patch('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        await pool.query('DELETE FROM courses WHERE id = $1', [id]);
+        await pool.query('DELETE FROM courses WHERE course_id = $1', [id]);
         res.status(200).json({ message: 'Course deleted successfully' });
     } catch (err) {
         res.status(500).json({ error: err.message });
@@ -84,7 +84,7 @@ router.post('/:id/items', async (req, res) => {
 router.delete('/items/:itemId', async (req, res) => {
     const { itemId } = req.params;
     try {
-        await pool.query('DELETE FROM course_items WHERE id = $1', [itemId]);
+        await pool.query('DELETE FROM course_items WHERE item_id = $1', [itemId]);
         res.status(200).json({ message: 'Item deleted' });
     } catch (err) {
         res.status(500).json({ error: err.message });
