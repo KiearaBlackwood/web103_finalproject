@@ -40,7 +40,7 @@ Backend:
 
 [✅]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
 
-[gif goes here]
+[(CapstoneGifDash.gif)]
 
 ### Assignment Tracker
 
