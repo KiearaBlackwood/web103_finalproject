@@ -32,13 +32,13 @@ Backend:
 
 ### Course Dashboard
 
-[X]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
+[✅]Users can create, view, edit, and delete courses. Each course displays its associated notes, materials, and assignments in one organized view.
 
 ![Course Dashboard](CapstoneGifDash.gif)
 
 ### Notes Manager
 
-[ ]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
+[✅]Users can create, edit, and delete notes. Notes are associated with a specific course and can be tagged for easy retrieval.
 
 [gif goes here]
 
