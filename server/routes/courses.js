@@ -136,6 +136,47 @@ router.post('/:id/items', async (req, res) => {
     }
 });
 
+// UPDATE a specific item (content, due_date, tags, status)
+router.patch('/items/:itemId', async (req, res) => {
+    const { itemId } = req.params;
+    const { content, due_date, tags, status } = req.body;
+
+    if (status !== undefined && !['complete', 'incomplete'].includes(status)) {
+        return res.status(400).json({ error: 'status must be "complete" or "incomplete"' });
+    }
+    if (content !== undefined && (!content || !content.trim())) {
+        return res.status(400).json({ error: 'content cannot be empty' });
+    }
+    if (tags !== undefined && !Array.isArray(tags)) {
+        return res.status(400).json({ error: 'tags must be an array' });
+    }
+
+    try {
+        const result = await pool.query(
+            `UPDATE course_items
+             SET content  = COALESCE($1, content),
+                 due_date = COALESCE($2, due_date),
+                 tags     = COALESCE($3, tags),
+                 status   = COALESCE($4, status)
+             WHERE item_id = $5
+             RETURNING *`,
+            [
+                content?.trim() ?? null,
+                due_date ?? null,
+                tags ?? null,
+                status ?? null,
+                itemId
+            ]
+        );
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Item not found' });
+        }
+        res.status(200).json(result.rows[0]);
+    } catch (err) {
+        res.status(500).json({ error: err.message });
+    }
+});
+
 // DELETE a specific item
 router.delete('/items/:itemId', async (req, res) => {
     const { itemId } = req.params;

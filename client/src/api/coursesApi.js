@@ -51,6 +51,10 @@ export const coursesApi = {
         method: 'POST',
         body: JSON.stringify(item)
     }),
+    updateItem: (itemId, data) => request(`/courses/items/${itemId}`, {
+        method: 'PATCH',
+        body: JSON.stringify(data)
+    }),
     removeItem: (itemId) => request(`/courses/items/${itemId}`, {
         method: 'DELETE'
     })
