@@ -44,7 +44,7 @@ Backend:
 
 ### Assignment Tracker
 
-[ ]Users can add assignments with due dates, descriptions, and course associations. Assignments can be marked as complete and track progress over time.
+[✅]Users can add assignments with due dates, descriptions, and course associations. Assignments can be marked as complete and track progress over time.
 
 [gif goes here]
 
