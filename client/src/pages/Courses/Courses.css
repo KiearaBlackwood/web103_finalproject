@@ -128,10 +128,62 @@
     text-decoration: line-through;
 }
 
-/* Overdue date badge */
-.meta-overdue {
-    color: #ef4444 !important;
+/* Due-date footer — sits at the bottom of an assignment card */
+.item-due {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    font-size: 0.85rem;
+}
+
+.item-due__label {
+    font-size: 0.7rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent) !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.item-due__date {
+    color: var(--text-h) !important;
     font-weight: 600;
+    background: transparent !important;
+    padding: 0 !important;
+    font-size: 0.85rem !important;
+}
+
+.item-due--overdue {
+    background: rgba(239, 68, 68, 0.08);
+    border-color: rgba(239, 68, 68, 0.4);
+}
+
+.item-due--overdue .item-due__label,
+.item-due--overdue .item-due__date {
+    color: #ef4444 !important;
+}
+
+.item-due__badge {
+    margin-left: auto;
+    font-size: 0.7rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #fff !important;
+    background: #ef4444 !important;
+    padding: 2px 8px !important;
+    border-radius: 999px;
+}
+
+/* Mute the due footer when the assignment is complete */
+.item-card--complete .item-due {
+    opacity: 0.7;
 }
 
 /* Action button group on assignment cards */

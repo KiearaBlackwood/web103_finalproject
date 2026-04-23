@@ -120,18 +120,27 @@ const Courses = () => {
                 <div className="item-details">
                     <span className="item-content">{item.content}</span>
                     <div className="item-meta">
-                        {item.due_date && (
-                            <span className={isOverdue(item) ? 'meta-overdue' : ''}>
-                                Due {new Date(item.due_date).toLocaleDateString()}
-                            </span>
-                        )}
-                        <span>{new Date(item.created_at).toLocaleDateString()}</span>
+                        <span>Created {new Date(item.created_at).toLocaleDateString()}</span>
                     </div>
                     <div className="item-tags">
                         {(item.tags || []).length > 0
                             ? item.tags.map((tag) => <span key={tag}>{tag}</span>)
                             : <span>No tags</span>}
                     </div>
+                    {item.due_date && (
+                        <div className={`item-due${isOverdue(item) ? ' item-due--overdue' : ''}`}>
+                            <span className="item-due__label">Due</span>
+                            <span className="item-due__date">
+                                {new Date(item.due_date).toLocaleDateString(undefined, {
+                                    weekday: 'short',
+                                    month: 'short',
+                                    day: 'numeric',
+                                    year: 'numeric'
+                                })}
+                            </span>
+                            {isOverdue(item) && <span className="item-due__badge">Overdue</span>}
+                        </div>
+                    )}
                 </div>
                 <div className="item-actions">
                     <button
