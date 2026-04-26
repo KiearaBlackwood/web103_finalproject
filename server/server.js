@@ -1,6 +1,7 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import coursesRouter from './routes/courses.js'
+import assignmentMaterialsRouter from './routes/assignmentMaterials.js'
 import { fileURLToPath } from 'url' 
 import path from 'path'
 
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 
 app.use('/public', express.static('./public'))
 app.use('/courses', coursesRouter)
+app.use('/courses/items/assignments', assignmentMaterialsRouter)
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => console.log(`🚀 Server on http://localhost:${PORT}`))
