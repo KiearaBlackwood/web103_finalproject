@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router-dom'
 import { coursesApi } from '../../api/coursesApi'
+import AssignmentMaterials from '../../components/AssignmentMaterials/AssignmentMaterials'
 import './Courses.css'
 
 const Courses = () => {
@@ -40,11 +41,28 @@ const Courses = () => {
             return
         }
 
+        const tagsInput = window.prompt('Optional tags (comma separated):', '') || ''
+        const statusInput = window.prompt('Status (complete or incomplete):', 'incomplete') || 'incomplete'
+        const dueDateInput = type === 'assignment'
+            ? window.prompt('Optional due date (YYYY-MM-DD or ISO string):', '') || ''
+            : ''
+
+        const tags = tagsInput
+            .split(',')
+            .map((item) => item.trim())
+            .filter(Boolean)
+
+        const normalizedStatus = statusInput.trim().toLowerCase() === 'complete' ? 'complete' : 'incomplete'
+        const normalizedDueDate = dueDateInput.trim() || null
+
         try {
             setError('')
             await coursesApi.addItem(courseId, {
                 type,
-                content: value.trim()
+                content: value.trim(),
+                tags,
+                status: normalizedStatus,
+                due_date: normalizedDueDate
             })
             await loadCourse()
         } catch (err) {
@@ -66,10 +84,50 @@ const Courses = () => {
         }
     }
 
-    const renderItems = (items) => {
+    // Notes and materials render 
+    const renderBasicItems = (items) => {
         return items.map((item) => (
             <li key={item.item_id} className="item-card">
-                <span>{item.content}</span>
+                <div className="item-details">
+                    <span className="item-content">{item.content}</span>
+                    <div className="item-meta">
+                        <span>{item.status}</span>
+                        <span>{new Date(item.created_at).toLocaleDateString()}</span>
+                        {item.due_date ? <span>Due {new Date(item.due_date).toLocaleDateString()}</span> : null}
+                    </div>
+                    <div className="item-tags">
+                        {(item.tags || []).length > 0 ? item.tags.map((itemTag) => (
+                            <span key={itemTag}>{itemTag}</span>
+                        )) : <span>No tags</span>}
+                    </div>
+                </div>
+                <button type="button" className="delete-btn" onClick={() => deleteItem(item.item_id)}>
+                    ×
+                </button>
+            </li>
+        ))
+    }
+
+    // Assignments render with the Course Material Library
+    const renderAssignmentItems = (items) => {
+        return items.map((item) => (
+            <li key={item.item_id} className="item-card item-card--assignment">
+                <div className="item-details" style={{ flex: 1 }}>
+                    <span className="item-content">{item.content}</span>
+                    <div className="item-meta">
+                        <span>{item.status}</span>
+                        <span>{new Date(item.created_at).toLocaleDateString()}</span>
+                        {item.due_date ? <span>Due {new Date(item.due_date).toLocaleDateString()}</span> : null}
+                    </div>
+                    <div className="item-tags">
+                        {(item.tags || []).length > 0 ? item.tags.map((itemTag) => (
+                            <span key={itemTag}>{itemTag}</span>
+                        )) : <span>No tags</span>}
+                    </div>
+
+                    {/* ── Course Material Library ── */}
+                    <AssignmentMaterials itemId={item.item_id} />
+                </div>
                 <button type="button" className="delete-btn" onClick={() => deleteItem(item.item_id)}>
                     ×
                 </button>
@@ -97,7 +155,7 @@ const Courses = () => {
                         <button type="button" onClick={() => addItem('note')}>+</button>
                     </div>
                     <ul id="notes-list" className="item-list">
-                        {renderItems(notes)}
+                        {renderBasicItems(notes)}
                     </ul>
                 </section>
 
@@ -107,7 +165,7 @@ const Courses = () => {
                         <button type="button" onClick={() => addItem('material')}>+</button>
                     </div>
                     <ul id="materials-list" className="item-list">
-                        {renderItems(materials)}
+                        {renderBasicItems(materials)}
                     </ul>
                 </section>
 
@@ -117,7 +175,7 @@ const Courses = () => {
                         <button type="button" onClick={() => addItem('assignment')}>+</button>
                     </div>
                     <ul id="assignments-list" className="item-list">
-                        {renderItems(assignments)}
+                        {renderAssignmentItems(assignments)}
                     </ul>
                 </section>
             </main>
