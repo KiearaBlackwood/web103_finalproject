@@ -13,7 +13,6 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') })
 
 const dropTables = async () => {
     const dropTablesQuery = `
-        DROP TABLE IF EXISTS assignment_materials CASCADE;
         DROP TABLE IF EXISTS course_items CASCADE;
         DROP TABLE IF EXISTS courses CASCADE;
         DROP TABLE IF EXISTS users CASCADE;
@@ -52,20 +51,6 @@ const createTables = async () => {
             created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
             tags TEXT[] NOT NULL DEFAULT '{}',
             status TEXT NOT NULL DEFAULT 'incomplete' CHECK (status IN ('complete', 'incomplete'))
-        );
-
-        CREATE TABLE assignment_materials (
-            material_id SERIAL PRIMARY KEY,
-            item_id INTEGER REFERENCES course_items(item_id) ON DELETE CASCADE,
-            title TEXT NOT NULL,
-            description TEXT,
-            file_name TEXT NOT NULL,
-            file_url TEXT NOT NULL,
-            file_type TEXT NOT NULL DEFAULT 'other' CHECK (file_type IN ('syllabus', 'reading', 'slides', 'other')),
-            file_size INTEGER,
-            mime_type TEXT,
-            tags TEXT[] NOT NULL DEFAULT '{}',
-            created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         );
     `
 
