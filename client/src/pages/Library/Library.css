@@ -1,0 +1,135 @@
+.library-page {
+    padding: 20px;
+}
+
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 0 0 20px;
+}
+
+.library-header h1 {
+    margin: 8px 0;
+}
+
+.library-header p {
+    margin: 0;
+    max-width: 760px;
+}
+
+.library-reset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+}
+
+.library-controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.library-controls label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: var(--text-h);
+}
+
+.library-controls select,
+.library-controls input {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: var(--code-bg);
+    color: var(--text-h);
+}
+
+.library-error {
+    color: #b91c1c;
+    margin-bottom: 12px;
+}
+
+.library-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.library-empty {
+    grid-column: 1 / -1;
+    padding: 24px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--text);
+    background: var(--social-bg);
+}
+
+.library-card {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    background: var(--bg);
+    box-shadow: var(--shadow);
+}
+
+.library-card.type-note {
+    border-top: 4px solid #aa3bff;
+}
+
+.library-card.type-material {
+    border-top: 4px solid #3b82f6;
+}
+
+.library-card.type-assignment {
+    border-top: 4px solid #ef4444;
+}
+
+.library-card-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.library-course {
+    font-weight: 700;
+    color: var(--text-h);
+}
+
+.library-card h2 {
+    font-size: 1.1rem;
+    margin: 0 0 12px;
+    color: var(--text-h);
+}
+
+.library-meta,
+.library-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.library-meta span,
+.library-tags span {
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: 0.82rem;
+    background: var(--social-bg);
+    color: var(--text-h);
+}
+
+@media (max-width: 720px) {
+    .library-header {
+        flex-direction: column;
+    }
+}
