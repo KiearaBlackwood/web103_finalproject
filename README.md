@@ -68,7 +68,7 @@ Backend:
 
 ### Course Material Library
 
-[ ]Users can upload and manage course materials (syllabi, readings, slides) linked to specific courses. Materials are searchable and can be tagged.
+[✅]Users can upload and manage course materials (syllabi, readings, slides) linked to specific courses. Materials are searchable and can be tagged.
 
 [gif goes here]
 
@@ -80,7 +80,7 @@ Backend:
 
 ### Filter & Sort
 
-[ ]Users can filter and sort notes, assignments, and materials by course, date, tags, status (complete/incomplete), or relevance.
+[✅]Users can filter and sort notes, assignments, and materials by course, date, tags, status (complete/incomplete), or relevance.
 
 [gif goes here]
 
